@@ -1,0 +1,8 @@
+chocolate_branco - papaya_com_cassis
+chocolate_branco - graviola
+chocolate_branco - kiwi
+papaya_com_cassis - maca_verde
+papaya_com_cassis - kiwi
+graviola - maca_verde
+graviola - kiwi
+graviola - kiwi
