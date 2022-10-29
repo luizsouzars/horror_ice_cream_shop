@@ -64,6 +64,12 @@ def cups(flavors:list,graph:dict):
                     if len(s)==3:
                         cup3.append(s)
                         count3 += 1
+                    if len(s) > 3:
+                        aux = list(set(s) - set({flavor}))
+                        for elm in aux:
+                            if [flavor,elm,s[-1]] not in cup3 and elm != s[-1]:
+                                cup3.append([flavor,elm,s[-1]])
+                                count3 += 1
     return cup2, count2, cup3, count3
     
 def main():
