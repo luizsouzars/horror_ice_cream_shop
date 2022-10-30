@@ -62,18 +62,20 @@ def cups(flavors:list,graph:dict):
                     count2 += 1
                 for s in path:
                     if len(s)==3:
-                        cup3.append(s)
-                        count3 += 1
+                        if s not in cup3:
+                            cup3.append(s)
+                            count3 += 1
                     if len(s) > 3:
                         aux = list(set(s) - set({flavor}))
                         for elm in aux:
-                            if [flavor,elm,s[-1]] not in cup3 and elm != s[-1]:
-                                cup3.append([flavor,elm,s[-1]])
-                                count3 += 1
+                            if elm != s[-1]:
+                                if [flavor,elm,s[-1]] not in cup3:
+                                    cup3.append([flavor,elm,s[-1]])
+                                    count3 += 1
     return cup2, count2, cup3, count3
     
 def main():
-    for root,dir,files in os.walk('t2_casostestes_iniciais'):
+    for root,_,files in os.walk('t2_casostestes_iniciais'):
         for file in files:
             path = f'{root}\\{file}'
             flavors,links = read_txt(path)
