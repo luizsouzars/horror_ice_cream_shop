@@ -123,4 +123,6 @@ def main():
             print(f'Cups with two flavors: {count2}')
             print(f'Cups with three flavors: {count3}')
             print()
-main()
+
+if __name__ == '__main__':
+    main()
